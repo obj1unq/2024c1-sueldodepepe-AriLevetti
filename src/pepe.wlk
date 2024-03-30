@@ -131,3 +131,76 @@ object ajuste {
 
 }
 
+// BONUS
+object sofia {
+
+	var categoria = cadete
+	var bonoXResultados = resultadoNulo
+	var faltas = 0
+
+	method sueldo() {
+		return self.neto() + self.resultado()
+	}
+
+	method neto() {
+		return categoria.neto() * 1.30
+	}
+
+	method categoria(_categoria) {
+		categoria = _categoria
+	}
+
+	method resultado() {
+		return bonoXResultados.valor(self)
+	}
+
+	method bonoXResultados(_bonoXResultados) {
+		bonoXResultados = _bonoXResultados
+	}
+
+	method faltas(_faltas) {
+		faltas = _faltas
+	}
+
+	method faltas() {
+		return faltas
+	}
+
+}
+
+object vendedor {
+
+	var muchaVenta = false
+
+	method neto() {
+		return if (muchaVenta) {
+			16000 * 1.25
+		} else {
+			16000
+		}
+	}
+
+	method activarAumentoPorMuchasVentas() {
+		muchaVenta = true
+	}
+
+	method desactivarAumentoPorMuchasVentas() {
+		muchaVenta = false
+	}
+
+}
+
+object medioTiempo {
+
+	var categoriaBase = cadete
+
+	method categoriaBase(_categoriaBase) {
+		categoriaBase = _categoriaBase
+	}
+
+	method neto() {
+		return categoriaBase.neto() / 2
+	}
+
+}
+
