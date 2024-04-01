@@ -204,3 +204,53 @@ object medioTiempo {
 
 }
 
+object roque {
+
+	var bonoXResultados = resultadoNulo
+
+	method neto() {
+		return 28000
+	}
+
+	method sueldo() {
+		return self.neto() + self.resultado() + 9000
+	}
+
+	method resultado() {
+		return bonoXResultados.valor(self)
+	}
+
+	method bonoXResultados(_bonoXResultados) {
+		bonoXResultados = _bonoXResultados
+	}
+
+}
+
+object ernesto {
+
+	var companeroDeErnesto = pepe
+	var bonoXPresentismo = presentismoNulo
+	var property faltas = 0
+
+	method sueldo() {
+		return self.neto() + self.presentismo()
+	}
+
+	method neto() {
+		return companeroDeErnesto.neto()
+	}
+
+	method companeroDeErnesto(_companeroDeErnesto) {
+		companeroDeErnesto = _companeroDeErnesto
+	}
+
+	method presentismo() {
+		return bonoXPresentismo.valor(self)
+	}
+
+	method bonoXPresentismo(_bonoXPresentismo) {
+		bonoXPresentismo = _bonoXPresentismo
+	}
+
+}
+

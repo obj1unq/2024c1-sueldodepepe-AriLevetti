@@ -37,5 +37,24 @@ describe "Sueldo Pepe" {
 		assert.equals(23000, pepe.sueldo())
 	}
 
+//test Bonus
+	test "la categoria base de 'medio tiempo' es cadete, Pepe tiene 
+categoría medio tiempo, tiene bono resultado de porcentaje y bono 
+presentismo demagógico. Falta una vez. Roque tiene bono resultado monto
+fijo. Ernesto tiene de compañero a Pepe, y bono presentismo por ajuste." {
+		medioTiempo.categoriaBase(cadete)
+		pepe.categoria(medioTiempo)
+		pepe.bonoXResultados(porcentaje)
+		pepe.bonoXPresentismo(demagogico)
+		pepe.faltas(1)
+		roque.bonoXResultados(montoFijo)
+		ernesto.companeroDeErnesto(pepe)
+		ernesto.bonoXPresentismo(ajuste)
+		ernesto.faltas(0)
+		assert.equals(11500, pepe.sueldo())
+		assert.equals(37800, roque.sueldo())
+		assert.equals(10100, ernesto.sueldo())
+	}
+
 }
 
